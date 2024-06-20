@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        border: 0;
+        box-sizing: border-box;
+        outline: none;
+        font-family: "Poppins", sans-serif;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+      }
+      .emailer-content-box {
+        display: flex;
+        justify-content: center;
+      }
+      .emailer-content-box .emailerContainer {
+        width: 100%;
+        max-width: 500px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .emailer-content-box .emailerContainer .emailerBox {
+        width: 100%;
+        max-width: 500px;
+        padding: 12px;
+        margin-top: 20px;
+      }
+      .emailer-content-box .emailerContainer .secondary-emailer {
+        width: 100%;
+        max-width: 500px;
+        padding: 12px;
+      }
+      .emailer-content-box .emailerContainer .emailerBox .logoContainer,
+      .emailer-content-box .emailerContainer .secondary-emailer .logoContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .emailer-content-box .emailerContainer .emailerBox .logoContainer img,
+      .emailer-content-box
+        .emailerContainer
+        .secondary-emailer
+        .logoContainer
+        img {
+        width: 100px;
+      }
+      .emailer-content-box .emailerContainer .emailerBox .amazonTxt {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .emailer-content-box .emailerContainer .emailerBox .amazonTxt span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        background: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(223, 239, 255, 1) 50%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        color: #01509a;
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 1;
+        padding: 12px 0px;
+        border-radius: 5px;
+      }
+      .emailer-content-box .emailerContainer .emailerBox .amazonTxt span img {
+        width: 80px;
+        margin-top: 8px;
+      }
+      .emailer-content-box .emailerContainer .emailerBox .mainEmailerImg {
+        display: flex;
+        justify-content: center;
+      }
+      .emailer-content-box .emailerContainer .emailerBox .mainEmailerImg img {
+        width: 100%;
+        max-width: 400px;
+        object-fit: contain;
+        padding: 20px;
+      }
+      .emailer-content-box .emailerContainer .emailerBox .emailerContent {
+        padding: 12px;
+        border: 1px solid #f0efef;
+        border-radius: 5px;
+        background-color: white;
+      }
+      .emailer-content-box .emailerContainer .emailerBox .emailerContent h3 {
+        text-align: center;
+        font-size: 13px;
+        color: #333333;
+        line-height: 22px;
+        font-weight: 600;
+      }
+      .emailer-content-box .emailerContainer .emailerBox .emailerContent h3 a {
+        color: #3e70d1;
+        text-decoration: none;
+      }
+      .emailer-content-box
+        .emailerContainer
+        .emailerBox
+        .emailerContent
+        h3
+        span {
+        font-size: 38px;
+      }
+      .emailer-content-box
+        .emailerContainer
+        .emailerBox
+        .emailerContent
+        .emailerBoxPara {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 13px;
+        color: #333333;
+        line-height: 16px;
+        text-align: center;
+        gap: 10px;
+        margin: 20px 0px;
+      }
+      .emailer-content-box
+        .emailerContainer
+        .emailerBox
+        .emailerContent
+        .emailerBoxPara
+        img {
+        width: 60px;
+      }
+      .emailer-content-box
+        .emailerContainer
+        .emailerBox
+        .emailerContent
+        .emailerBoxPara
+        img:first-child {
+        transform: rotate(-180deg);
+      }
+      .emailer-content-box
+        .emailerContainer
+        .emailerBox
+        .emailerContent
+        .emailerTiles {
+        padding: 8px;
+        background-color: #f6f3fe;
+        border: 1px solid #dacbf4;
+        display: flex;
+        gap: 6px;
+        border-radius: 10px;
+        margin-bottom: 16px;
+      }
+      .emailer-content-box
+        .emailerContainer
+        .emailerBox
+        .emailerContent
+        .emailerTiles
+        img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+      }
+      .emailer-content-box
+        .emailerContainer
+        .emailerBox
+        .emailerContent
+        .emailerTiles
+        .emailerTilesTxt {
+        text-align: left;
+      }
+
+      .emailer-content-box
+        .emailerContainer
+        .emailerBox
+        .emailerContent
+        .emailerTiles
+        .emailerTilesTxt
+        h3 {
+        text-align: left;
+        color: #333333;
+        line-height: 24px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .emailer-content-box
+        .emailerContainer
+        .emailerBox
+        .emailerContent
+        .emailerTiles
+        p {
+        color: #333333;
+        font-size: 12px;
+        line-height: 13px;
+        font-weight: 400;
+      }
+      .emailer-content-box
+        .emailerContainer
+        .emailerBox
+        .emailerContent
+        .bottomDescription
+        p:first-child {
+        color: #333333;
+        font-size: 12px;
+        line-height: 14px;
+        text-align: center;
+        padding: 0px 5px;
+        margin: 10px 0px;
+        font-weight: 500;
+      }
+      .emailer-content-box
+        .emailerContainer
+        .emailerBox
+        .emailerContent
+        .bottomDescription
+        p:last-child {
+        color: #959595;
+        font-size: 10px;
+        line-height: 14px;
+        text-align: center;
+        padding: 0px 5px;
+        margin: 6px 0px;
+        font-weight: 400;
+        font-style: italic;
+      }
+      .emailer-content-box
+        .emailerContainer
+        .emailerBox
+        .emailerContent
+        .bottomDescription
+        .reviewBtn {
+        display: flex;
+        justify-content: center;
+      }
+      .emailer-content-box
+        .emailerContainer
+        .emailerBox
+        .emailerContent
+        .bottomDescription
+        .reviewBtn
+        a {
+        background-color: #2849a6;
+        color: white;
+        font-size: 13px;
+        text-align: center;
+        border-radius: 100px;
+        padding: 8px 16px;
+        text-decoration: none;
+        margin: 7px 0px;
+      }
+      .emailer-content-box .emailerContainer .secondary-emailer .headingTxt {
+        margin-top: 8px;
+        color: #264653;
+        text-align: center;
+        word-wrap: break-word;
+        line-height: 1;
+        font-size: 32px;
+        font-weight: 600;
+      }
+      .emailer-content-box .emailerContainer .secondary-emailer .secondaryPara {
+        font-size: 22px;
+        line-height: 30px;
+        color: #2a9d8f;
+        text-align: center;
+        font-weight: 600;
+      }
+      .emailer-content-box .emailerContainer .secondary-emailer .greetingTxt {
+        font-size: 14px;
+        color: #264653;
+        line-height: 20px;
+        font-weight: 400;
+        text-align: center;
+      }
+      .emailer-content-box .emailerContainer .secondary-emailer .winnersBox {
+        margin-top: 10px;
+        background-color: #f6f3fe;
+        border-radius: 12px;
+        border: 1px solid #dacbf4;
+      }
+      .emailer-content-box .emailerContainer .secondary-emailer .winnersBox h3 {
+        font-size: 16px;
+        line-height: 22px;
+        color: #42545c;
+        text-align: center;
+        font-weight: 500;
+        padding-top: 16px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #dacbf46f;
+      }
+      .emailer-content-box
+        .emailerContainer
+        .secondary-emailer
+        .winnersBox
+        .usersBox {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        flex-wrap: wrap;
+      }
+      .emailer-content-box
+        .emailerContainer
+        .secondary-emailer
+        .winnersBox
+        .usersBox
+        .userDescription {
+        padding: 8px;
+        width: 33.33%;
+        max-width: 100px;
+      }
+      .emailer-content-box
+        .emailerContainer
+        .secondary-emailer
+        .winnersBox
+        .usersBox
+        .userDescription
+        .usersName {
+        font-size: 10px;
+        line-height: 11px;
+        color: #264653;
+        text-align: center;
+        font-weight: 400;
+      }
+      .emailer-content-box
+        .emailerContainer
+        .secondary-emailer
+        .winnersBox
+        .usersBox
+        .userDescription
+        img {
+        width: 100%;
+        max-width: 100px;
+        height: 100px;
+        object-fit: cover;
+        margin-top: 5px;
+        border-radius: 8px;
+        border: 2px dashed #4300ff30;
+      }
+      .emailer-content-box
+        .emailerContainer
+        .secondary-emailer
+        .bottomClickLink {
+        background-color: #fff6e5;
+        border: 2px dashed #ffca68;
+        padding: 16px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        border-radius: 8px;
+        margin-top: 10px;
+        font-size: 13px;
+        line-height: 14px;
+        color: #264653;
+        font-weight: 400;
+      }
+      .emailer-content-box
+        .emailerContainer
+        .secondary-emailer
+        .bottomClickLink
+        a {
+        color: #2849a6;
+        white-space: nowrap;
+      }
+      .emailer-content-box .emailerContainer .secondary-emailer .aboutUsBox {
+        background-color: #dfefff;
+        padding: 22px 12px;
+        margin-top: 10px;
+        border-radius: 8px;
+      }
+      .emailer-content-box .emailerContainer .secondary-emailer .aboutUsBox h3 {
+        font-size: 18px;
+        line-height: 24px;
+        color: #00284e;
+        font-weight: 600;
+        text-align: center;
+      }
+      .emailer-content-box
+        .emailerContainer
+        .secondary-emailer
+        .aboutUsBox
+        .webLink {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        font-size: 13px;
+        line-height: 15px;
+        color: #00284e;
+        font-weight: 300;
+        margin-top: 10px;
+      }
+      .emailer-content-box
+        .emailerContainer
+        .secondary-emailer
+        .aboutUsBox
+        .webLink
+        a {
+        font-size: 13px;
+        line-height: 15px;
+        color: #00284e;
+        font-weight: 300;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="emailer-content-box">
+      <div class="emailerContainer">
+        <!-- Top email section -->
+        <div class="emailerBox">
+          <div class="logoContainer">
+            <img src="ht-auto-logo.webp" alt="ht auto logo" />
+          </div>
+          <div class="amazonTxt">
+            <span>
+              Review & Win <img src="amazon.png" alt="amazon logo" /> Voucher
+            </span>
+          </div>
+          <div class="mainEmailerImg">
+            <img src="reviewImg.png" alt="..." />
+          </div>
+          <div class="emailerContent">
+            <h3>
+              <span>👋</span><br />Hello HTians, Exciting news! <br />
+              Our webiste now features <a href="#">User Review</a> and we want
+              to hear from you about your cars and bikes.
+            </h3>
+            <p class="emailerBoxPara">
+              <img src="reviewArrows.png" alt="..." />
+              Here's how it works:
+              <img src="reviewArrows.png" alt="..." />
+            </p>
+            <div class="emailerTiles">
+              <img src="titleImg1.png" alt="..." />
+              <div class="emailerTilesTxt">
+                <h3>Submit Your Review:</h3>
+                <p>
+                  Visit our webiste and navigate to the user review section.
+                  Share your experiences/ opinions about your car and bike.
+                </p>
+              </div>
+            </div>
+            <div class="emailerTiles">
+              <img src="titleImage2.png" alt="..." />
+              <div class="emailerTilesTxt">
+                <h3>Spread the Word:</h3>
+                <p>
+                  After submitting your review, don't forget to share it with
+                  your friends, family, and followers. Encourage them to like
+                  and support your review.
+                </p>
+              </div>
+            </div>
+            <img src="GetAChance.png" alt="..." width="100%" />
+            <div class="bottomDescription">
+              <p>
+                Don't miss out on this opportunity. The more the likes, the
+                greater the chance to win!
+              </p>
+              <div class="reviewBtn">
+                <a href="#">Write a Review ></a>
+              </div>
+              <p>
+                Disclaimer: Best reviews to be based on likes and internal
+                discretion
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Secondary email section -->
+        <div class="secondary-emailer">
+          <p class="secondaryPara">Winner Announcement</p>
+          <img src="image-4.png" alt="..." width="100%" />
+          <p class="greetingTxt">
+            Here are the Amazon Voucher winners of the User Reviews Contest on
+            HT Auto
+          </p>
+          <!-- Week 1 Winners -->
+          <div class="winnersBox">
+            <h3>Week-1 Winners</h3>
+            <div class="usersBox">
+              <div class="userDescription">
+                <p class="usersName">Ashwani Kachroo</p>
+                <img src="image-10.jpeg" alt="..." />
+              </div>
+              <div class="userDescription">
+                <p class="usersName">Ayush Kumar</p>
+                <img src="image-9.png" alt="..." />
+              </div>
+              <div class="userDescription">
+                <p class="usersName">Ashlesh Acharya</p>
+                <img src="image-8.jpeg" alt="..." />
+              </div>
+            </div>
+          </div>
+          <!-- Week 2 Winners -->
+          <div class="winnersBox">
+            <h3>Week-2 Winners</h3>
+            <div class="usersBox">
+              <div class="userDescription">
+                <p class="usersName">Simranjeet Singh</p>
+                <img src="image-1.jpeg" alt="..." />
+              </div>
+              <div class="userDescription">
+                <p class="usersName">Saurav Taneja</p>
+                <img src="image-11.jpeg" alt="..." />
+              </div>
+              <div class="userDescription">
+                <p class="usersName">Bandan Kumar</p>
+                <img src="image-6.jpeg" alt="..." />
+              </div>
+              <div class="userDescription">
+                <p class="usersName">Rahul Mishra</p>
+                <img src="image-5.jpeg" alt="..." />
+              </div>
+            </div>
+          </div>
+          <!-- Week 3 Winners -->
+          <div class="winnersBox">
+            <h3>Week-3 Winners</h3>
+            <div class="usersBox">
+              <div class="userDescription">
+                <p class="usersName">Shashank Pandey</p>
+                <img src="image-3.jpeg" alt="..." />
+              </div>
+              <div class="userDescription">
+                <p class="usersName">Rohit Rana</p>
+                <img src="image-7.jpeg" alt="..." />
+              </div>
+              <div class="userDescription">
+                <p class="usersName">Deepak Singh</p>
+                <img src="image-12.jpeg" alt="..." />
+              </div>
+            </div>
+          </div>
+          <div class="bottomClickLink">
+            You can win Amazon Vouchers too! Write a user review now.
+            <a href="#">Click Here</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
